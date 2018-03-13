@@ -1,0 +1,34 @@
+syntax "cisco" "\.cfg$" "\.cisco$" "\.asa"
+header "Using username*"
+
+## Control
+icolor magenta "\<(if|else|for|function|case|esac|in|select|until|while|do|elif|then|set|\.|done|fi)\>"
+
+## Brackets and redirects
+icolor yellow "[(){}[;|<>]"
+icolor yellow "\]"
+
+## Top of Config Global
+icolor red "\<(source|alias|bg|bind|break|builtin|cd|command|compgen|complete|continue|dirs|disown|echo|enable|eval|exec|exit|fc|fg|getopts|hash|help|history|jobs|kill|let|logout|popd|printf|pushd|pwd|return|set|shift|shopt|suspend|test|times|trap|type|ulimit|umask|unalias|wait)\>"
+
+## Crypto
+icolor
+
+## Interface
+icolor
+
+## access-list
+
+## object
+
+
+## Strings
+icolor blue "\"(\\.|[^\"])*\""
+icolor blue "'(\\.|[^\'])*'"
+
+## Variables
+# NOTE: Keep this section below the Strings section, such that Variables are highlighted inside strings.
+color cyan start="[$@%]" end="([[:alnum:]]|_)*"
+
+## Comments
+color green "#.*$"
