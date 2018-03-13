@@ -1,4 +1,4 @@
-syntax "cisco" "\.cfg$" "\.cisco$" "\.asa"
+syntax "cisco" "\.cfg$" "\.cisco$" "\.asa$"
 header "Using username*"
 
 ## Control
@@ -9,22 +9,23 @@ icolor yellow "[(){}[;|<>]"
 icolor yellow "\]"
 
 ## Top of Config Global
-icolor red "\<(source|alias|bg|bind|break|builtin|cd|command|compgen|complete|continue|dirs|disown|echo|enable|eval|exec|exit|fc|fg|getopts|hash|help|history|jobs|kill|let|logout|popd|printf|pushd|pwd|return|set|shift|shopt|suspend|test|times|trap|type|ulimit|umask|unalias|wait)\>"
+icolor yellow "\<(service|hostname|domain-name|enable password|)\>"
 
 ## Crypto
-icolor
+
 
 ## Interface
-icolor
+color green "interface.*$"
 
 ## access-list
 
 ## object
-
+icolor blue "object network.*$"
+icolor blue "object-group.*$"
 
 ## Strings
-icolor blue "\"(\\.|[^\"])*\""
-icolor blue "'(\\.|[^\'])*'"
+#icolor blue "\"(\\.|[^\"])*\""
+#icolor blue "'(\\.|[^\'])*'"
 
 ## Variables
 # NOTE: Keep this section below the Strings section, such that Variables are highlighted inside strings.
